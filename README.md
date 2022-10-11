@@ -1,0 +1,1 @@
+# id-generate-spring-boot-autoconfigure
