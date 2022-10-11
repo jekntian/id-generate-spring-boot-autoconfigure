@@ -1,5 +1,7 @@
-package online.kakapapa;
+package online.kakapapa.config;
 
+import online.kakapapa.service.IdGenerateService;
+import online.kakapapa.properties.IdProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;

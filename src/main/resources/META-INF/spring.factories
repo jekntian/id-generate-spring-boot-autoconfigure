@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  online.kakapapa.IdGenerateAutoConfiguration
+  online.kakapapa.config.IdGenerateAutoConfiguration

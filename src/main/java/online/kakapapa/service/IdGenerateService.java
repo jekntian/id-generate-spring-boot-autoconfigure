@@ -1,6 +1,10 @@
-package online.kakapapa;
+package online.kakapapa.service;
+
+import online.kakapapa.properties.IdProperties;
+import online.kakapapa.util.SnowflakeIdWorker;
 
 import java.util.Objects;
+import java.util.UUID;
 
 /**
  * @author Tien.Chang
@@ -12,7 +16,7 @@ public class IdGenerateService {
         this.properties = properties;
     }
 
-    public Long generate() {
+    public Long getSnowflakeId() {
         if ((Objects.isNull(properties.getDataCenterId()) || Objects.isNull(properties.getWorkId())) && Objects.isNull(properties.getEpochDate())) {
             return new SnowflakeIdWorker().nextId();
         } else if (Objects.nonNull(properties.getDataCenterId()) && Objects.nonNull(properties.getWorkId()) && Objects.nonNull(properties.getEpochDate())) {
@@ -24,11 +28,20 @@ public class IdGenerateService {
         }
     }
 
-    public String generateStr() {
-        return this.generate().toString();
+    public String getSnowflakeStr() {
+        return this.getSnowflakeId().toString();
     }
 
-    public String generateBinary() {
-        return Long.toBinaryString(this.generate());
+    public String getSnowflakeBin() {
+        return Long.toBinaryString(this.getSnowflakeId());
+    }
+
+    public String getUuid() {
+        UUID uuid = UUID.randomUUID();
+        return uuid.toString();
+    }
+
+    public String getUuidChar() {
+        return this.getUuid().replace("-", "");
     }
 }

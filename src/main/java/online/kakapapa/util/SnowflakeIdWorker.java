@@ -1,4 +1,4 @@
-package online.kakapapa;
+package online.kakapapa.util;
 
 /**
  * Twitter_Snowflake<br>
